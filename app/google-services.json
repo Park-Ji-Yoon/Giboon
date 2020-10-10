@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "925385251739",
+    "firebase_url": "https://giboon-project.firebaseio.com",
+    "project_id": "giboon-project",
+    "storage_bucket": "giboon-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925385251739:android:588ae0a651401e19191f3e",
+        "android_client_info": {
+          "package_name": "com.example.giboon_ver3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925385251739-g2at43v5pr65rr4n35b6svn5j0a7sndd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL6rVRbPSJfJfa1ky8G57snmnn1ylUJf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925385251739-g2at43v5pr65rr4n35b6svn5j0a7sndd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

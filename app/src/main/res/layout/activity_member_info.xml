@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream22"
+            android:gravity="center"
+            android:text="회원정보 입력"
+            android:textSize="32sp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:src="@drawable/booni_with_flower" />
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:hint=" 이름"
+            android:fontFamily="@font/scdream22"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_outline_email_24"
+            android:drawableLeft="@drawable/ic_outline_email_24"
+            android:drawableTint="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"/>
+
+        <EditText
+            android:id="@+id/phoneText"
+            android:inputType="textPassword"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:hint=" 전화번호"
+            android:fontFamily="@font/scdream22"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/checkBtn"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:text="저장하기"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:fontFamily="@font/scdream22"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
