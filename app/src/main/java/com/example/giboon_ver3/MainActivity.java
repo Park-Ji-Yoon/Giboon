@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 switch(item.getItemId()){
+                    case R.id.action_home:
+                        transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
+                        break;
                     case R.id.action_notice:
                         transaction.replace(R.id.frameLayout, fragmentNotice).commitAllowingStateLoss();
                         break;
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        findViewById(R.id.logoutBtn).setOnClickListener(onClickListener);
+//        findViewById(R.id.logoutBtn).setOnClickListener(onClickListener);
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {

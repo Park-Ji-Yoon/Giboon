@@ -8,5 +8,9 @@
         <item name="windowActionBar">false</item>을
         <item name="windowNoTitle">true</item>
     </style>
-
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">#17506e</item>
+        <item name="android:textColor">#17506e</item>
+        <item name="android:textColorPrimary">#548096</item>
+    </style>
 </resources>
