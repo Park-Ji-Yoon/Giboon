@@ -70,7 +70,8 @@ public class SignupActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    startToast("회원가입에 성공하였습니다");                                FirebaseUser user = mAuth.getCurrentUser();
+                                    startToast("회원가입에 성공하였습니다");
+                                    FirebaseUser user = mAuth.getCurrentUser();
                                     startMyActivity(LoginActivity.class);
                                     // UI
                                 } else {

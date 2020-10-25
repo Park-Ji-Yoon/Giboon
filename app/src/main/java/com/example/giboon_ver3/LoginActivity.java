@@ -2,6 +2,8 @@ package com.example.giboon_ver3;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    Button login_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startToast("로그인에 성공하였습니다");
                                 startMyActivity(MainActivity.class);
+                                startBundle();
                             } else {
                                 if(task.getException() != null){
                                     startToast(task.getException().toString());
@@ -95,5 +99,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, c);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+    private void startBundle(){
+        FragmentIndividual myFragment = new FragmentIndividual();
+        Bundle bundle = new Bundle(1); // 파라미터의 숫자는 전달하려는 값의 갯수
+        bundle.putString("key", "value");
+        myFragment.setArguments(bundle);
     }
 }
