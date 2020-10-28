@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class FragmentHome extends Fragment {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String manager = "zolpzoluv@gmail.com";
-    private static final String TAG = "ChangeCampaign";
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -39,6 +38,8 @@ public class FragmentHome extends Fragment {
                 handle.setText("△");
             }
         });
+
+        //파이어베이스 데이터 불러오기
 
         final Button slidingButton = (Button)view.findViewById(R.id.slidingButton);
         if(mAuth.getCurrentUser().getEmail().equals(manager)){

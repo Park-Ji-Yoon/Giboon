@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ChangeCampaignActivity extends AppCompatActivity {
     Button btnOk;
     Button btnCancel;
+    EditText campaignTitle;
+    EditText campaignInfo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,11 +31,16 @@ public class ChangeCampaignActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_campaign);
 
         btnOk = findViewById(R.id.btnOk);
+        campaignTitle = findViewById(R.id.campaignTitle);
+        campaignInfo = findViewById(R.id.campaignInfo);
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //파이어베이스
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                campaignTitle.setText("");
+                campaignInfo.setText("");
             }
         });
         btnCancel = findViewById(R.id.btnCancel);
@@ -41,6 +49,8 @@ public class ChangeCampaignActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                campaignTitle.setText("");
+                campaignInfo.setText("");
             }
         });
     }

@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="70dp"
             android:fontFamily="@font/scdream5"
             android:text="캠페인 주제"
@@ -35,20 +35,22 @@
 
         <EditText
             android:id="@+id/campaignTitle"
-            android:layout_width="300dp"
+            android:layout_width="320dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
             android:background="#FFFFFF"
             android:fontFamily="@font/scdream3"
+            android:hint="입력해주십시오."
             android:overScrollMode="never"
             android:textColor="#9C8F8F"
+            android:textColorHint="#B1AEAE"
             android:textSize="25sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/scdream5"
             android:text="캠페인 설명"
@@ -57,14 +59,16 @@
 
         <EditText
             android:id="@+id/campaignInfo"
-            android:layout_width="300dp"
+            android:layout_width="320dp"
             android:layout_height="150dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:background="#FFFFFF"
             android:fontFamily="@font/scdream3"
-            android:overScrollMode="ifContentScrolls"
+            android:gravity="top"
+            android:hint="입력해주십시오."
             android:textColor="#9C8F8F"
+            android:textColorHint="#B1AEAE"
             android:textSize="25sp" />
 
         <LinearLayout
