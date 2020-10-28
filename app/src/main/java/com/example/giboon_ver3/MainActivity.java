@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -21,6 +23,8 @@ import com.google.firebase.auth.UserInfo;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -87,10 +91,20 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
+//            ArrayList<String> arrayList = new ArrayList<>();
+//            arrayList.add("테스트1");
+//            arrayList.add("테스트2");
+//            arrayList.add("테스트3");
+//
+//            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+//            recyclerView.setHasFixedSize(true);
+//            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//            RecyclerView.Adapter mAdapter = new MainAdapter(this, arrayList);
+//            recyclerView.setAdapter(mAdapter);
         }
-
-//        findViewById(R.id.logoutBtn).setOnClickListener(onClickListener);
     }
+
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
