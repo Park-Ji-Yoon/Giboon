@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:background="@drawable/btn_custom"
-                android:text="▽"
+                android:text="△"
                 android:textSize="50sp"
                 android:textColor="#FFFFFF" />
 
@@ -69,6 +69,7 @@
                 android:background="#add7ed"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/campaignNotice"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,7 +79,8 @@
                     android:text="이번 달 캠페인의 주제는 OOO입니다.\n\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다."
                     android:textColor="#FFFFFF" />
                 <Button
-                    android:layout_gravity="center|bottom"
+                    android:id="@+id/slidingButton"
+                    android:layout_gravity="center"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textColor="#add7ed"

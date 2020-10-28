@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="360dp"
+        android:layout_height="600dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/scdream7"
+            android:text="새 캠페인 등록"
+            android:textColor="#add7ed"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/scdream5"
+            android:text="캠페인 주제"
+            android:textColor="#add7ed"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/campaignTitle"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/scdream3"
+            android:overScrollMode="never"
+            android:textColor="#9C8F8F"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/scdream5"
+            android:text="캠페인 설명"
+            android:textColor="#add7ed"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/campaignInfo"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/scdream3"
+            android:overScrollMode="ifContentScrolls"
+            android:textColor="#9C8F8F"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/dialog_btn_custom"
+                android:text="등록하기"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/scdream5"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/dialog_btn_custom"
+                android:text="취소하기"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/scdream5"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
