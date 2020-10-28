@@ -1,11 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="홈"
-        android:background="@color/colorWarning"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textCampaign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/scdream22"
+                android:gravity="center"
+                android:text="OOO 캠페인"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/textMoney"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/scdream22"
+                android:gravity="center"
+                android:text="000,000\\"
+                android:textSize="32sp" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/booni_with_flower" />
+        </LinearLayout>
+
+        <SlidingDrawer
+            android:id="@+id/slidingdrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="140dp"
+            android:content="@+id/content"
+            android:handle="@+id/handle">
+
+            <Button
+                android:id="@+id/handle"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/btn_custom"
+                android:text="△"
+                android:textSize="50sp"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#add7ed"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/campaignNotice"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/scdream22"
+                    android:layout_weight="2"
+                    android:textSize="20sp"
+                    android:text="이번 달 캠페인의 주제는 OOO입니다.\n\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다."
+                    android:textColor="#FFFFFF" />
+                <Button
+                    android:id="@+id/slidingButton"
+                    android:layout_gravity="center"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#add7ed"
+                    android:background="@drawable/slide_btn_custom"
+                    android:fontFamily="@font/scdream22"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text = "캠페인 참여하기"/>
+            </LinearLayout>
+        </SlidingDrawer>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
