@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/textCampaign"
+                android:id="@+id/textCampaignTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
@@ -26,7 +26,7 @@
                 android:textSize="35sp" />
 
             <TextView
-                android:id="@+id/textMoney"
+                android:id="@+id/textCampaignMoney"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -69,14 +69,14 @@
                 android:background="#add7ed"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/campaignNotice"
+                    android:id="@+id/textCampaignInfo"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/scdream22"
                     android:layout_weight="2"
                     android:textSize="20sp"
-                    android:text="이번 달 캠페인의 주제는 OOO입니다.\n\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다."
+                    android:text="OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다.\n OOO이란 OOO입니다."
                     android:textColor="#FFFFFF" />
                 <Button
                     android:id="@+id/slidingButton"
