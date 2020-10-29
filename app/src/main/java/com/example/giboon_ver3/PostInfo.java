@@ -8,30 +8,26 @@ import java.util.Map;
 
 public class PostInfo implements Serializable {
     private String title;
-    private ArrayList<String> contents;
-    private String writer;
+    private String contents;
+    private String publisher;
     private Date createdAt;
+    private String name;
 
-    public PostInfo(String title, ArrayList<String> contents, String writer, Date createdAt){
+    public PostInfo(String title, String contents, String publisher, Date createdAt, String name){
         this.title = title;
         this.contents = contents;
-        this.writer = writer;
+        this.publisher = publisher;
         this.createdAt = createdAt;
+        this.name = name;
     }
-
-//    public PostInfo(String title, ArrayList<String> contents, ArrayList<String> formats, String publisher, Date createdAt){
-//        this.title = title;
-//        this.contents = contents;
-//        this.writer = publisher;
-//        this.createdAt = createdAt;
-//    }
 
     public Map<String, Object> getPostInfo(){
         Map<String, Object> docData = new HashMap<>();
         docData.put("title",title);
         docData.put("contents",contents);
-        docData.put("writer",writer);
+        docData.put("publisher",publisher);
         docData.put("createdAt",createdAt);
+        docData.put("name", name);
         return  docData;
     }
 
@@ -41,22 +37,28 @@ public class PostInfo implements Serializable {
     public void setTitle(String title){
         this.title = title;
     }
-    public ArrayList<String> getContents(){
+    public String getContents(){
         return this.contents;
     }
-    public void setContents(ArrayList<String> contents){
+    public void setContents(String contents){
         this.contents = contents;
     }
     public String getPublisher(){
-        return this.writer;
+        return this.publisher;
     }
     public void setPublisher(String publisher){
-        this.writer = publisher;
+        this.publisher = publisher;
     }
     public Date getCreatedAt(){
         return this.createdAt;
     }
     public void setCreatedAt(Date createdAt){
         this.createdAt = createdAt;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public void setName(String name){
+        this.name = name;
     }
 }

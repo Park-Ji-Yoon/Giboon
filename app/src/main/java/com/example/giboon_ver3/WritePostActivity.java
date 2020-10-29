@@ -10,11 +10,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class WritePostActivity extends AppCompatActivity {
     String TAG = "태그입니다 : ";
     FirebaseUser user;
     FirebaseFirestore db;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,27 @@ public class WritePostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_write_post);
 
         findViewById(R.id.check).setOnClickListener(onClickListener);
+
+        DocumentReference documentReference = FirebaseFirestore.getInstance().collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null) {
+                        if (document.exists()) {
+                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                            name = (document.getData().get("name").toString());
+                            System.out.println(document.getData().get("name").toString() +  " " + document.getData().get("phone").toString());
+                        } else {
+                            Log.d(TAG, "No such document");
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener(){
@@ -45,14 +70,13 @@ public class WritePostActivity extends AppCompatActivity {
     };
     private void profileUpdate(){
         final String title = ((EditText)findViewById(R.id.titleEditText)).getText().toString();
-        String Contents = ((EditText)findViewById(R.id.contentEditText)).getText().toString();
-        final ArrayList<String> contentsList = new ArrayList<>();
+        String contents = ((EditText)findViewById(R.id.contentEditText)).getText().toString();
+//        final String contentsList = new ArrayList<>();
 
-        if(title.length() > 0 && Contents.length() > 0){
+        if(title.length() > 0 && contents.length() > 0){
             user = FirebaseAuth.getInstance().getCurrentUser();
             db = FirebaseFirestore.getInstance();
-
-            PostInfo postInfo = new PostInfo(title, contentsList, user.getUid(), new Date());
+            PostInfo postInfo = new PostInfo(title, contents, user.getUid(), new Date(), name);
             uploader(postInfo);
         }else{
             startToast("제목과 내용을 모두 입력해주세요");
