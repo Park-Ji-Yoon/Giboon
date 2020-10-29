@@ -18,10 +18,13 @@ import androidx.fragment.app.Fragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.w3c.dom.Text;
 
@@ -29,6 +32,7 @@ public class FragmentHome extends Fragment {
     private static final String TAG = "FragmentHome";
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String manager = "zolpzoluv@gmail.com";
+    CollectionReference campaignslast = FirebaseFirestore.getInstance().collection("campaigns");
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,22 +45,16 @@ public class FragmentHome extends Fragment {
         final TextView campaignMoney = (TextView)view.findViewById(R.id.textCampaignMoney);
         final TextView campaignInfo = (TextView)view.findViewById(R.id.textCampaignInfo);
 
-        DocumentReference documentReference = FirebaseFirestore.getInstance().collection("campaigns").document("fr0SM2loLlUmGn45E8gM");
-        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        Task<QuerySnapshot> querySnapshotTask = FirebaseFirestore.getInstance().collection("campaigns").get();
+        querySnapshotTask.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    campaignTitle.setText(documentSnapshot.getData().get("title").toString() + " 캠페인");
-                    campaignMoney.setText(documentSnapshot.getData().get("money").toString() + "\\");
-                    campaignInfo.setText(documentSnapshot.getData().get("contents").toString());
-                    if (documentSnapshot.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
+                    campaignTitle.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("title").toString() + " 캠페인");
+                    campaignMoney.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("money").toString() + "\\");
+                    campaignInfo.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("contents").toString());
                 } else {
-                    Log.d(TAG, "get failed with ", task.getException());
+                    Log.d(TAG, "Error getting documents: ", task.getException());
                 }
             }
         });

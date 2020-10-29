@@ -11,6 +11,7 @@ public class ChangeInfo {
     private String publisher;
     private String money;
     private Date createdAt;
+    public static int count = 0;
 
     public ChangeInfo(String title, String contents, String publisher, String money, Date createdAt){
         this.title = title;
@@ -59,5 +60,9 @@ public class ChangeInfo {
     }
     public void setCreatedAt(Date createdAt){
         this.createdAt = createdAt;
+    }
+    public static int getCount(){return count;}
+    public void setCount(int count){
+        this.count = count;
     }
 }

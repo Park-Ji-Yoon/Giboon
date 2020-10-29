@@ -1,5 +1,6 @@
 package com.example.giboon_ver3;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -96,6 +97,8 @@ public class ChangeCampaignActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, documentReference.getId());
+                        changeInfo.setCount(changeInfo.getCount() + 1);
+                        startToast("새로운 캠페인이 등록되었습니다. 어플리케이션을 다시 시작해주십시오.");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
