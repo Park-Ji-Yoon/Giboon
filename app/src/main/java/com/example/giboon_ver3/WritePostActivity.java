@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -64,6 +67,8 @@ public class WritePostActivity extends AppCompatActivity {
             switch(v.getId()){
                 case R.id.check:
                     profileUpdate();
+                    FragmentCampaign fragmentCampaign = new FragmentCampaign();
+                    replaceFragment(fragmentCampaign);
                     break;
             }
         }
@@ -113,8 +118,10 @@ public class WritePostActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
-    private void startMyActivity(Class c) {
-        Intent intent = new Intent(this, c);
-        startActivity(intent);
+    public void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.activity_write_post_lin, fragment);
+        fragmentTransaction.commit();
     }
 }
