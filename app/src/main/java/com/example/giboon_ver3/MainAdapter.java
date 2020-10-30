@@ -3,25 +3,36 @@ package com.example.giboon_ver3;
 import android.app.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
+import listener.OnPostListener;
 
-
-public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.GalleryViewHolder> {
+public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
     private ArrayList<PostInfo> mDataset;
     private FragmentCampaign activity;
+    private MainActivity mainActivity;
+    PopupMenu popup;
+    private FirebaseFirestore firebaseFirestore;
+    private OnPostListener onPostListener;
 
-    static class GalleryViewHolder extends RecyclerView.ViewHolder {
+    static class MainViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
-        GalleryViewHolder(CardView v) {
+        MainViewHolder(CardView v) {
             super(v);
             cardView = v;
         }
@@ -31,13 +42,18 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.GalleryViewHo
         mDataset = myDataset;
         this.activity = activity;
         System.out.println("myDataset" + myDataset);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+    }
+
+    public void setOnPostListener(OnPostListener onPostListener){
+        this.onPostListener = onPostListener;
     }
 
     @NonNull
     @Override
-    public MainAdapter.GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainAdapter.MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cardView = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.item_post, parent, false);
-        final GalleryViewHolder galleryViewHolder = new GalleryViewHolder(cardView);
+        final MainViewHolder mainViewHolder = new MainViewHolder(cardView);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +61,18 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.GalleryViewHo
             }
         });
 
-        return galleryViewHolder;
+        cardView.findViewById(R.id.menu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopup(v, mainViewHolder.getAdapterPosition());
+            }
+        });
+
+        return mainViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final GalleryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MainViewHolder holder, int position) {
         CardView cardView = holder.cardView;
 
         // 게시판 리스트 요소들 id 가져오기
@@ -93,5 +116,29 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.GalleryViewHo
     @Override
     public int getItemCount() {
         return mDataset.size();
+    }
+
+    public void showPopup(View v, final int position) {
+        PopupMenu popup = new PopupMenu(mainActivity.mContext, v);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                String id = mDataset.get(position).getId();;
+                switch (menuItem.getItemId()) {
+                    case R.id.modify:
+                        onPostListener.onModify(id);
+                        Toast.makeText(mainActivity.mContext, "수정이 완료되었습니다", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.delete:
+                        onPostListener.onDelect(id);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.post, popup.getMenu());
+        popup.show();
     }
 }

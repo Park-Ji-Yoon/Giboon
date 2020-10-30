@@ -12,6 +12,16 @@ public class PostInfo implements Serializable {
     private String publisher;
     private Date createdAt;
     private String name;
+    private String id;
+
+    public PostInfo(String title, String contents, String publisher, Date createdAt, String name, String id){
+        this.title = title;
+        this.contents = contents;
+        this.publisher = publisher;
+        this.createdAt = createdAt;
+        this.name = name;
+        this.id = id;
+    }
 
     public PostInfo(String title, String contents, String publisher, Date createdAt, String name){
         this.title = title;
@@ -60,5 +70,11 @@ public class PostInfo implements Serializable {
     }
     public void setName(String name){
         this.name = name;
+    }
+    public String getId(){
+        return this.id;
+    }
+    public void setId(String id){
+        this.id = id;
     }
 }

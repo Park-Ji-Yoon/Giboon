@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
@@ -27,13 +28,27 @@
                 tools:text="제목1번입니다"/>
 
             <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginRight="37dp"
+                android:gravity="right"
+                android:padding="7dp"
+                tools:text="2019.01.12" />
+
+            <TextView
                 android:id="@+id/textName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
 
                 android:layout_toStartOf="@+id/textDate"
                 android:layout_toLeftOf="@+id/textDate"
@@ -41,19 +56,17 @@
                 android:padding="7dp"
                 tools:text="박지윤" />
 
-            <TextView
-                android:id="@+id/textDate"
+            <ImageView
+                android:id="@+id/menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
-                android:gravity="right"
-                android:padding="7dp"
-                tools:text="2019.01.12" />
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                tools:ignore="VectorDrawableCompat" />
 
         </RelativeLayout>
 
