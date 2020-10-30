@@ -77,6 +77,16 @@ public class WritePostActivity extends AppCompatActivity {
             user = FirebaseAuth.getInstance().getCurrentUser();
             db = FirebaseFirestore.getInstance();
             PostInfo postInfo = new PostInfo(title, contents, user.getUid(), new Date(), name);
+
+            String id = getIntent().getStringExtra("id");
+            DocumentReference dr;
+            Log.e("id : ", id);
+            if(id == null){
+                dr = db.collection("posts").document();
+            }else{
+                dr = db.collection("posts").document(id);
+            }
+            final DocumentReference documentReference = dr;
             uploader(postInfo);
         }else{
             startToast("제목과 내용을 모두 입력해주세요");

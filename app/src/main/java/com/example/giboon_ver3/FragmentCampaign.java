@@ -125,6 +125,7 @@ public class FragmentCampaign extends Fragment {
         @Override
         public void onModify(String id) {
             Log.e("로그", "수정" + id);
+            myStartActivity(WritePostActivity.class, id);
         }
     };
 
@@ -159,5 +160,11 @@ public class FragmentCampaign extends Fragment {
                         }
                     }
                 });
+    }
+
+    private void myStartActivity(Class c, String id){
+        Intent intent = new Intent(getActivity(), c);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 }

@@ -11,46 +11,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream4"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="기분 회원들에게 전하고 싶은 말을 적어보세요" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/scdream3"
+            android:text="◦ 예) 칭찬, 격려, 위로 등\n◦ 욕설, 비방은 금지입니다"
+            android:textSize="15sp" />
+
         <EditText
             android:id="@+id/titleEditText"
             android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="176dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:background="#d9f4ff"
             android:fontFamily="@font/scdream4"
-            android:layout_gravity="center"
             android:hint="제목을 입력해 주세요"
             android:paddingLeft="10dp"
             android:textColor="#053142"
-            android:textColorHint="#3e7387"
-            android:textSize="20sp" />
+            android:textColorHint="#FF598495"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/contentEditText"
             android:layout_width="300dp"
-            android:layout_height="232dp"
+            android:layout_height="305dp"
             android:layout_above="@+id/check"
             android:layout_below="@+id/titleEditText"
+            android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="71dp"
+            android:layout_marginBottom="50dp"
             android:background="#d9f4ff"
             android:gravity="top"
-            android:layout_gravity="center"
-            android:hint="하고 싶은 말을 남겨보세요"
+            android:hint="하고 싶은 말을 남겨보세요\n⦁ 최소 0자~최대 2000자"
             android:padding="10dp"
             android:textColor="#053142"
-            android:textColorHint="#3e7387" />
+            android:textColorHint="#598495"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/check"
             android:layout_width="300dp"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="#209bc9"
             android:fontFamily="@font/scdream3"
             android:text="업로드하기"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

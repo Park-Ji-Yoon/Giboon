@@ -127,7 +127,6 @@ public class MainAdapter  extends RecyclerView.Adapter<MainAdapter.MainViewHolde
                 switch (menuItem.getItemId()) {
                     case R.id.modify:
                         onPostListener.onModify(id);
-                        Toast.makeText(mainActivity.mContext, "수정이 완료되었습니다", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.delete:
                         onPostListener.onDelect(id);
