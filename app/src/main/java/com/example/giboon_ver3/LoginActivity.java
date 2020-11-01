@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,10 +74,13 @@ public class LoginActivity extends AppCompatActivity {
         String password = ((EditText)findViewById(R.id.pwText)).getText().toString();
 
         if(email.length() > 0 && password.length() > 0){
+            final RelativeLayout loaderLayout = findViewById(R.id.loaderLayout);
+            loaderLayout.setVisibility(View.VISIBLE);
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            loaderLayout.setVisibility(View.GONE);
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startToast("로그인에 성공하였습니다");
@@ -84,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startBundle();
                             } else {
                                 if(task.getException() != null){
-                                    startToast(task.getException().toString());
+                                    startToast("이메일 또는 비밀번호가 일치하지 않습니다");
                                 }
                             }
                         }

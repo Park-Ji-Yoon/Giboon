@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class FragmentIndividual extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_individual, container, false);
+        final View view = inflater.inflate(R.layout.fragment_individual, container, false);
 
         final Button reset = (Button)view.findViewById(R.id.pwResetBtn);
         reset.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +50,11 @@ public class FragmentIndividual extends Fragment {
         loginout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final RelativeLayout loaderLayout = view.findViewById(R.id.loaderLayout);
+                loaderLayout.setVisibility(View.VISIBLE);
                 loginOutMethod();
+                loaderLayout.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "로그아웃되었습니다", Toast.LENGTH_SHORT).show();
             }
         });
 

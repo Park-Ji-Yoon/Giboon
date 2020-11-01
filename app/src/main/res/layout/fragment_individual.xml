@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,26 +21,52 @@
 
         <TextView
             android:id="@+id/emailTv"
-            android:layout_width="250dp"
+            android:layout_width="226dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="179dp"
             android:layout_marginLeft="179dp"
-            android:layout_marginBottom="135dp"
+            android:layout_marginBottom="132dp"
             android:fontFamily="@font/scdream22" />
 
         <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="105dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginBottom="133dp"
+            android:fontFamily="@font/scdream3"
+            android:text="메일" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="105dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginBottom="90dp"
+            android:fontFamily="@font/scdream3"
+            android:text="전화번호" />
+
+        <TextView
             android:id="@+id/phoneTv"
-            android:layout_width="160dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="180dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="190dp"
+            android:layout_marginStart="178dp"
+            android:layout_marginLeft="178dp"
+            android:layout_marginTop="191dp"
             android:layout_marginBottom="25dp"
             android:fontFamily="@font/scdream22" />
 
@@ -51,23 +77,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginStart="178dp"
             android:layout_marginLeft="178dp"
             android:layout_marginTop="106dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginRight="73dp"
             android:fontFamily="@font/scdream22" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="106dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginBottom="92dp"
-            android:fontFamily="@font/scdream3"
-            android:text="전화번호" />
 
         <TextView
             android:id="@+id/textView2"
@@ -81,19 +98,6 @@
             android:layout_marginTop="106dp"
             android:fontFamily="@font/scdream3"
             android:text="이름" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="106dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginBottom="135dp"
-            android:fontFamily="@font/scdream3"
-            android:text="메일" />
 
         <TextView
             android:id="@+id/textView3"
@@ -133,55 +137,77 @@
             android:fontFamily="@font/scdream22"
             android:gravity="center"
             android:text="비밀번호 재설정"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#008CD5"
             android:textSize="15sp" />
 
+        <!--        <Button-->
+        <!--            android:id="@+id/withdrawal"-->
+        <!--            android:layout_width="400dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_marginEnd="1dp"-->
+        <!--            android:layout_marginRight="1dp"-->
+        <!--            android:layout_marginBottom="91dp"-->
+        <!--            android:background="#48A6E4"-->
+        <!--            android:fontFamily="@font/scdream22"-->
+        <!--            android:text="회원 탈퇴" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/logoutBtn"-->
+        <!--            android:layout_width="400dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginStart="7dp"-->
+        <!--            android:layout_marginLeft="7dp"-->
+        <!--            android:layout_marginEnd="4dp"-->
+        <!--            android:layout_marginRight="4dp"-->
+        <!--            android:layout_marginBottom="145dp"-->
+        <!--            android:background="#69CAFD"-->
+        <!--            android:fontFamily="@font/scdream22"-->
+        <!--            android:text="로그아웃" />-->
+
     </RelativeLayout>
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/withdrawal"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="89dp"
+        android:background="#48A6E4"
+        android:fontFamily="@font/scdream22"
+        android:text="회원 탈퇴" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="144dp"
+        android:background="#69CAFD"
+        android:fontFamily="@font/scdream22"
+        android:text="로그아웃" />
+
+    <include
+        layout="@layout/activity_loading"
         android:layout_width="match_parent"
-        android:layout_height="432dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
-        <Button
-            android:id="@+id/withdrawal"
-            android:layout_width="400dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="97dp"
-            android:background="#97bacc"
-            android:fontFamily="@font/scdream22"
-            android:text="회원 탈퇴" />
-
-        <Button
-            android:id="@+id/logoutBtn"
-            android:layout_width="400dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="157dp"
-            android:background="#add7ed"
-            android:fontFamily="@font/scdream22"
-            android:text="로그아웃" />
-    </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
