@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -38,6 +39,10 @@ import listener.OnNoticeListener;
 
 public class FragmentNotice extends Fragment {
     private Object MainActivity;
+
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private String manager = "zolpzoluv@gmail.com";
+
     FirebaseFirestore database = FirebaseFirestore.getInstance();
     String TAG3 = "자유게시판 리스트";
     View view3 = null;
@@ -68,6 +73,11 @@ public class FragmentNotice extends Fragment {
         recyclerView2.setHasFixedSize(true);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView2.setAdapter(noticeAdapter);
+
+        if(!mAuth.getCurrentUser().getEmail().equals(manager)){
+            FloatingActionButton addNoticeBtn2 = view3.findViewById(R.id.addNoticeBtn);
+            addNoticeBtn2.setVisibility(View.GONE);
+        }
 
         return view3;
     }
