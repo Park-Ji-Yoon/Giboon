@@ -1,21 +1,26 @@
 package com.example.giboon_ver3;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -98,20 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-//            ArrayList<String> arrayList = new ArrayList<>();
-//            arrayList.add("테스트1");
-//            arrayList.add("테스트2");
-//            arrayList.add("테스트3");
-//
-//            RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//            recyclerView.setHasFixedSize(true);
-//            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//            RecyclerView.Adapter mAdapter = new MainAdapter(this, arrayList);
-//            recyclerView.setAdapter(mAdapter);
         }
     }
-
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -136,5 +129,35 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.post, popup.getMenu());
         popup.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Giboon을 종료하시겠습니까?");
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ActivityCompat.finishAffinity(MainActivity.this);
+                System.exit(0);
+            }
+        });
+        builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // 아무 동작 안 해도 됨
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+
+        alertDialog.setOnShowListener( new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface arg0) {
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+                alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            }
+        });
+
+        alertDialog.show();
     }
 }

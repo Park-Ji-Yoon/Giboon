@@ -34,8 +34,8 @@
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textSize="18sp"
-            android:drawableStart="@drawable/ic_outline_email_24"
-            android:drawableLeft="@drawable/ic_outline_email_24"
+            android:drawableStart="@drawable/ic_baseline_person_24_white"
+            android:drawableLeft="@drawable/ic_baseline_person_24_white"
             android:drawableTint="#FFFFFF"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
@@ -43,7 +43,6 @@
 
         <EditText
             android:id="@+id/phoneText"
-            android:inputType="textPassword"
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:hint=" 전화번호"
@@ -51,8 +50,8 @@
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textSize="18sp"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawableStart="@drawable/ic_baseline_phone_android_24"
+            android:drawableLeft="@drawable/ic_baseline_phone_android_24"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorPrimary"/>

@@ -85,7 +85,7 @@ public class FragmentIndividual extends Fragment {
                                     Toast.makeText(activity, "탈퇴되셨습니다", Toast.LENGTH_SHORT).show();
                                     updateDetail();
                                 }else{
-                                    Toast.makeText(activity, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity, "탈퇴하지 못했습니다", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
