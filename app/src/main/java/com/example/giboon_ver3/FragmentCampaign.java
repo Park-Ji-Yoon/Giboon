@@ -49,35 +49,6 @@ public class FragmentCampaign extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_campaign, container, false);
         firebaseFirestore = FirebaseFirestore.getInstance();
-        // 게시판 리스트
-//        db.collection("posts")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            ArrayList<PostInfo> postList = new ArrayList<>();
-//                            for (QueryDocumentSnapshot document : task.getResult()) {
-//                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                                postList.add(new PostInfo(
-//                                        document.getData().get("title").toString(),
-//                                        document.getData().get("contents").toString(),
-//                                        document.getData().get("publisher").toString(),
-//                                        new Date(document.getDate("createdAt").getTime()),
-//                                        document.getData().get("name").toString()
-//                                        ));
-//                            }
-//                            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-//                            recyclerView.setHasFixedSize(true);
-//                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//
-//                            RecyclerView.Adapter mAdapter = new MainAdapter(FragmentCampaign.this, postList);
-//                            recyclerView.setAdapter(mAdapter);
-//                        } else {
-//                            Log.d(TAG, "Error getting documents: ", task.getException());
-//                        }
-//                    }
-//                });
 
         // 글 추가하기 버튼
         FloatingActionButton addPostBtn = view.findViewById(R.id.addPostBtn);

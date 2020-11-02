@@ -1,6 +1,5 @@
 package com.example.giboon_ver3;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,21 +22,20 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-public class WritePostActivity extends AppCompatActivity {
-    String TAG = "태그입니다 : ";
-    FirebaseUser user;
-    FirebaseFirestore db;
-    String name;
+public class WriteNoticeActivity extends AppCompatActivity {
+    String TAG2 = "태그입니다 : ";
+    FirebaseUser user2;
+    FirebaseFirestore db2;
+    String name2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_write_post);
+        setContentView(R.layout.activity_write_notice);
 
-        findViewById(R.id.check).setOnClickListener(onClickListener);
+        findViewById(R.id.check2).setOnClickListener(onClickListener);
 
         DocumentReference documentReference = FirebaseFirestore.getInstance().collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -47,15 +45,15 @@ public class WritePostActivity extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document != null) {
                         if (document.exists()) {
-                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                            name = (document.getData().get("name").toString());
+                            Log.d(TAG2, "DocumentSnapshot data: " + document.getData());
+                            name2 = (document.getData().get("name").toString());
                             System.out.println(document.getData().get("name").toString() +  " " + document.getData().get("phone").toString());
                         } else {
-                            Log.d(TAG, "No such document");
+                            Log.d(TAG2, "No such document");
                         }
                     }
                 } else {
-                    Log.d(TAG, "get failed with ", task.getException());
+                    Log.d(TAG2, "get failed with ", task.getException());
                 }
             }
         });
@@ -65,51 +63,51 @@ public class WritePostActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch(v.getId()){
-                case R.id.check:
+                case R.id.check2:
                     profileUpdate();
-                    FragmentCampaign fragmentCampaign = new FragmentCampaign();
-                    replaceFragment(fragmentCampaign);
+                    FragmentNotice fragmentNotice = new FragmentNotice();
+                    replaceFragment(fragmentNotice);
                     break;
             }
         }
     };
     private void profileUpdate(){
-        final String title = ((EditText)findViewById(R.id.titleEditText)).getText().toString();
-        String contents = ((EditText)findViewById(R.id.contentEditText)).getText().toString();
+        final String title2 = ((EditText)findViewById(R.id.titleEditText2)).getText().toString();
+        String contents2 = ((EditText)findViewById(R.id.contentEditText2)).getText().toString();
 //        final String contentsList = new ArrayList<>();
 
-        if(title.length() > 0 && contents.length() > 0){
-            user = FirebaseAuth.getInstance().getCurrentUser();
-            db = FirebaseFirestore.getInstance();
-            PostInfo postInfo = new PostInfo(title, contents, user.getUid(), new Date(), name);
+        if(title2.length() > 0 && contents2.length() > 0){
+            user2 = FirebaseAuth.getInstance().getCurrentUser();
+            db2 = FirebaseFirestore.getInstance();
+            NoticeInfo noticeInfo = new NoticeInfo(title2, contents2, user2.getUid(), new Date(), name2);
 
             String id = getIntent().getStringExtra("id");
             DocumentReference dr;
 /*            Log.e("id : ", id);*/
             if(id == null){
-                dr = db.collection("posts").document();
+                dr = db2.collection("notices").document();
             }else{
-                dr = db.collection("posts").document(id);
+                dr = db2.collection("notices").document(id);
             }
             final DocumentReference documentReference = dr;
-            uploader(postInfo);
+            uploader(noticeInfo);
         }else{
             startToast("제목과 내용을 모두 입력해주세요");
         }
     }
-    private void uploader(PostInfo postInfo){
+    private void uploader(NoticeInfo noticeInfo){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("posts").add(postInfo)
+        db.collection("notices").add(noticeInfo)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, documentReference.getId());
+                        Log.d(TAG2, documentReference.getId());
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, "Error adding document", e);
+                        Log.d(TAG2, "Error adding document", e);
                     }
                 });
     }
@@ -119,9 +117,9 @@ public class WritePostActivity extends AppCompatActivity {
     }
 
     public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.activity_write_post_lin, fragment);
+        FragmentManager fragmentManager2 = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager2.beginTransaction();
+        fragmentTransaction.replace(R.id.activity_write_notice_lin, fragment);
         fragmentTransaction.commit();
     }
 }

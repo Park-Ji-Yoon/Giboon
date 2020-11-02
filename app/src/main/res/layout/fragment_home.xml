@@ -82,7 +82,7 @@
 
                 <Button
                     android:id="@+id/slidingButton"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
@@ -91,7 +91,8 @@
                     android:fontFamily="@font/scdream22"
                     android:text="캠페인 참여하기"
                     android:textColor="#add7ed"
-                    android:textSize="30sp" />
+                    android:gravity="center"
+                    android:textSize="22sp" />
             </RelativeLayout>
         </SlidingDrawer>
     </RelativeLayout>

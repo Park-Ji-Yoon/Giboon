@@ -1,6 +1,5 @@
 package com.example.giboon_ver3;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;

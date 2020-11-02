@@ -17,6 +17,7 @@
         <activity android:name=".MemberInfoActivity"/>
         <activity android:name=".ChangeCampaignActivity"/>
         <activity android:name=".WritePostActivity"/>
+        <activity android:name=".WriteNoticeActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
