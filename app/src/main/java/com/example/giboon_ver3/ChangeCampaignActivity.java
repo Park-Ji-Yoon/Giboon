@@ -1,6 +1,5 @@
 package com.example.giboon_ver3;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,7 +19,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class ChangeCampaignActivity extends AppCompatActivity {
@@ -68,22 +63,15 @@ public class ChangeCampaignActivity extends AppCompatActivity {
             }
         });
     }
-    public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
-    }
     private void changeCampaign(){
         final String title = ((EditText)findViewById(R.id.campaignTitle)).getText().toString();
         String contents = ((EditText)findViewById(R.id.campaignInfo)).getText().toString();
-        final String money = "0";
 
         if(title.length() > 0 && contents.length() > 0){
             user = FirebaseAuth.getInstance().getCurrentUser();
             db = FirebaseFirestore.getInstance();
 
-            ChangeInfo changeInfo = new ChangeInfo(title, contents, user.getUid(), money, new Date());
+            ChangeInfo changeInfo = new ChangeInfo(title, contents, user.getUid(), new Date());
             change(changeInfo);
         }else{
             startToast("제목과 내용을 모두 입력해주세요");
@@ -98,7 +86,7 @@ public class ChangeCampaignActivity extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, documentReference.getId());
                         changeInfo.setCount(changeInfo.getCount() + 1);
-                        startToast("새로운 캠페인이 등록되었습니다. 어플리케이션을 다시 시작해주십시오.");
+                        startToast("새로운 캠페인이 등록되었습니다.");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

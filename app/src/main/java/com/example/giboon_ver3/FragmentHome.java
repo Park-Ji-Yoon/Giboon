@@ -17,15 +17,9 @@ import androidx.fragment.app.Fragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import org.w3c.dom.Text;
 
 public class FragmentHome extends Fragment {
     private static final String TAG = "FragmentHome";
@@ -41,7 +35,6 @@ public class FragmentHome extends Fragment {
         final Button handle = (Button)view.findViewById(R.id.handle);
         final Button slidingButton = (Button)view.findViewById(R.id.slidingButton);
         final TextView campaignTitle = (TextView)view.findViewById(R.id.textCampaignTitle);
-        final TextView campaignMoney = (TextView)view.findViewById(R.id.textCampaignMoney);
         final TextView campaignInfo = (TextView)view.findViewById(R.id.textCampaignInfo);
 
         Task<QuerySnapshot> querySnapshotTask = FirebaseFirestore.getInstance().collection("campaigns").get();
@@ -50,7 +43,6 @@ public class FragmentHome extends Fragment {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     campaignTitle.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("title").toString() + " 캠페인");
-                    campaignMoney.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("money").toString() + "\\");
                     campaignInfo.setText(task.getResult().getDocuments().get(ChangeInfo.getCount()).get("contents").toString());
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
