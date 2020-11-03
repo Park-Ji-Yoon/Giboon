@@ -14,7 +14,7 @@
         android:id="@+id/action_campaign"
         android:icon="@drawable/ic_baseline_favorite_border_24"
         android:enabled="true"
-        android:title="Campaign"/>
+        android:title="Board"/>
     <item
         android:id="@+id/action_private"
         android:icon="@drawable/ic_baseline_person_outline_24"

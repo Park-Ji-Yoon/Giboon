@@ -21,18 +21,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/scdream22"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/scdream4"
                 android:gravity="center"
                 android:text="회원가입"
-                android:textSize="32sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="32sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_margin="30dp"
+                android:layout_margin="20dp"
                 android:src="@drawable/booni_with_flower" />
 
         </LinearLayout>
@@ -58,76 +58,77 @@
                 android:id="@+id/emailText"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:hint=" 이메일"
-                android:fontFamily="@font/scdream22"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_outline_email_24"
                 android:drawableLeft="@drawable/ic_outline_email_24"
                 android:drawableTint="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"/>
+                android:fontFamily="@font/scdream3"
+                android:hint=" 이메일"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/passwordText"
-                android:inputType="textPassword"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:hint=" 비밀번호"
-                android:fontFamily="@font/scdream22"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:layout_marginTop="10dp"
                 android:drawableTint="#FFFFFF"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"/>
+                android:fontFamily="@font/scdream3"
+                android:hint=" 비밀번호"
+                android:inputType="textPassword"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/passwordCheckText"
-                android:inputType="textPassword"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:hint=" 비밀번호 확인"
-                android:fontFamily="@font/scdream22"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:layout_marginTop="10dp"
                 android:drawableTint="#FFFFFF"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"/>
+                android:fontFamily="@font/scdream3"
+                android:hint=" 비밀번호 확인"
+                android:inputType="textPassword"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="◦ 비밀번호는 6자리 이상이여야 합니다"
-                android:fontFamily="@font/scdream22"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:fontFamily="@font/scdream3"
+                android:text="◦ 비밀번호는 6자리 이상이여야 합니다" />
+
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="◦ 다양한 조합일수록 안전한 비밀번호입니다"
-                android:fontFamily="@font/scdream22"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:fontFamily="@font/scdream3"
+                android:text="◦ 다양한 조합일수록 안전한 비밀번호입니다" />
 
             <Button
                 android:id="@+id/signUpBtn"
                 android:layout_width="300dp"
                 android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="@font/scdream22"
                 android:text="가입하기"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:fontFamily="@font/scdream22"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center"
-                android:background="@color/colorPrimaryDark"/>
+                android:textSize="24sp" />
 
         </LinearLayout>
 

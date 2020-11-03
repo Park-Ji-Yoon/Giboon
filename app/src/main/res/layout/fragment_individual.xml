@@ -26,10 +26,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="179dp"
-            android:layout_marginLeft="179dp"
-            android:layout_marginBottom="132dp"
-            android:fontFamily="@font/scdream22" />
+            android:layout_marginStart="178dp"
+            android:layout_marginLeft="178dp"
+            android:layout_marginBottom="134dp"
+            android:fontFamily="@font/scdream4" />
 
         <TextView
             android:id="@+id/textView4"
@@ -41,7 +41,7 @@
             android:layout_marginStart="105dp"
             android:layout_marginLeft="105dp"
             android:layout_marginBottom="133dp"
-            android:fontFamily="@font/scdream3"
+            android:fontFamily="@font/scdream4"
             android:text="메일" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:layout_marginStart="105dp"
             android:layout_marginLeft="105dp"
             android:layout_marginBottom="90dp"
-            android:fontFamily="@font/scdream3"
+            android:fontFamily="@font/scdream4"
             android:text="전화번호" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_marginLeft="178dp"
             android:layout_marginTop="191dp"
             android:layout_marginBottom="25dp"
-            android:fontFamily="@font/scdream22" />
+            android:fontFamily="@font/scdream4" />
 
         <TextView
             android:id="@+id/nameTv"
@@ -84,7 +84,7 @@
             android:layout_marginTop="106dp"
             android:layout_marginEnd="73dp"
             android:layout_marginRight="73dp"
-            android:fontFamily="@font/scdream22" />
+            android:fontFamily="@font/scdream4" />
 
         <TextView
             android:id="@+id/textView2"
@@ -96,7 +96,7 @@
             android:layout_marginStart="105dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="106dp"
-            android:fontFamily="@font/scdream3"
+            android:fontFamily="@font/scdream4"
             android:text="이름" />
 
         <TextView
@@ -113,10 +113,10 @@
             android:layout_marginTop="39dp"
             android:layout_marginEnd="104dp"
             android:layout_marginRight="104dp"
-            android:fontFamily="@font/scdream5"
+            android:fontFamily="@font/scdream6"
             android:gravity="center"
             android:text="개인정보"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/pwResetBtn"
@@ -134,7 +134,7 @@
             android:layout_marginRight="134dp"
             android:layout_marginBottom="26dp"
             android:background="#00FF0000"
-            android:fontFamily="@font/scdream22"
+            android:fontFamily="@font/scdream4"
             android:gravity="center"
             android:text="비밀번호 재설정"
             android:textColor="#008CD5"
@@ -171,6 +171,22 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="144dp"
+        android:background="#76c6e8"
+        android:fontFamily="@font/scdream3"
+        android:text="로그아웃"
+        android:textSize="18sp" />
+
+    <Button
         android:id="@+id/withdrawal"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
@@ -185,24 +201,10 @@
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
         android:layout_marginBottom="89dp"
-        android:background="#48A6E4"
-        android:fontFamily="@font/scdream22"
-        android:text="회원 탈퇴" />
-
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="392dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="144dp"
-        android:background="#69CAFD"
-        android:fontFamily="@font/scdream22"
-        android:text="로그아웃" />
+        android:background="#429fcf"
+        android:fontFamily="@font/scdream3"
+        android:text="회원 탈퇴"
+        android:textSize="18sp" />
 
     <include
         layout="@layout/activity_loading"

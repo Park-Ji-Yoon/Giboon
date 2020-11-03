@@ -5,20 +5,34 @@
     android:layout_height="fill_parent"
     android:background="#FFFFFF">
 
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/dd"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="183dp"
-        android:layout_marginLeft="183dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
-        android:indeterminateTint="@color/colorPrimaryDark"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="182dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginRight="181dp"
+        android:layout_marginBottom="25dp"
+        android:indeterminateTint="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/dd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="297dp"
+        android:fontFamily="@font/scdream4"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="로딩중입니다\n잠시만 기다려 주세요"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
 
 </RelativeLayout>
