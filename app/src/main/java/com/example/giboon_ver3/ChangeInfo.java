@@ -18,14 +18,14 @@ public class ChangeInfo {
         this.createdAt = createdAt;
     }
 
-    public Map<String, Object> getPostInfo(){
-        Map<String, Object> docData = new HashMap<>();
-        docData.put("title",title);
-        docData.put("contents",contents);
-        docData.put("publisher",publisher);
-        docData.put("createdAt",createdAt);
-        return  docData;
-    }
+//    public Map<String, Object> getPostInfo(){
+//        Map<String, Object> docData = new HashMap<>();
+//        docData.put("title",title);
+//        docData.put("contents",contents);
+//        docData.put("publisher",publisher);
+//        docData.put("createdAt",createdAt);
+//        return  docData;
+//    }
 
     public String getTitle(){
         return this.title;
