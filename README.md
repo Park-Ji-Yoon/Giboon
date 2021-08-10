@@ -1,4 +1,4 @@
-# 기분 - Giboon
+# Giboon - 기분
 > 코로나 예방 캠페인을 장려하는 안드로이드 앱
 
 <!-- [![NPM Version][npm-image]][npm-url]
